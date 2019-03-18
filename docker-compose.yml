@@ -1,0 +1,14 @@
+
+version: '3'
+services:
+  liferay:
+    image: liferay/portal:7.1.2-ga3
+    ports:
+      - "8080:8080"
+      - "11311:11311"
+# Uncomment next 2 lines for demo #2 (restrict locales to German and English)
+#    environment:
+#      LIFERAY_LOCALES_PERIOD_ENABLED: de_DE,en_US,hu_HU
+# Uncomment next 2 lines for demo #3 (inject scripts, files, plugins on startup)
+#    volumes:
+#      - ./conf/liferay:/etc/liferay/mount

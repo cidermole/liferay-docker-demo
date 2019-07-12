@@ -17,7 +17,7 @@ services:
 #      LIFERAY_LOCALES_PERIOD_ENABLED: de_DE,en_US,hu_HU
 # Uncomment next 2 lines for demo #3 (inject scripts, files, plugins on startup)
     volumes:
-      - ./conf/liferay:/etc/liferay/mount
+      - ./conf/liferay:/etc/liferay
 #      - "D:\\repos\\liferay-docker-demo\\conf\\liferay:/etc/liferay/mount"
   db:
 # NOTE: connector conf/liferay/files/tomcat/lib/ext/mysql-connector-java-8.0.16.jar
@@ -30,3 +30,6 @@ services:
       MYSQL_USER: liferay
       MYSQL_PASSWORD: liferaySuperSecretPassword
       MYSQL_DATABASE: lportal
+    ports:
+# for debugging:
+      - "3306:3306"

@@ -1,7 +1,7 @@
 version: '3'
 services:
   liferay:
-    image: liferay/portal:7.1.2-ga3
+    image: liferay/portal:7.2.0-rc2
     ports:
       - "8080:8080"
       - "11311:11311"
@@ -11,6 +11,8 @@ services:
       LIFERAY_JDBC_PERIOD_DEFAULT_PERIOD_URL: "jdbc:mysql://db/lportal?characterEncoding=UTF-8&dontTrackOpenResources=true&holdResultsOpenOverStatementClose=true&serverTimezone=GMT&useFastDateParsing=false&useUnicode=true"
       LIFERAY_JDBC_PERIOD_DEFAULT_PERIOD_USERNAME: liferay
       LIFERAY_JDBC_PERIOD_DEFAULT_PERIOD_PASSWORD: liferaySuperSecretPassword
+    depends_on:
+      - db
 
 # Uncomment next 2 lines for demo #2 (restrict locales to German and English)
 #    environment:

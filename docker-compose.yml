@@ -5,9 +5,28 @@ services:
     ports:
       - "8080:8080"
       - "11311:11311"
+    environment:
+# use .env file? see https://docs.docker.com/compose/env-file/
+      LIFERAY_JDBC_PERIOD_DEFAULT_PERIOD_DRIVER_UPPERCASEC_LASS_UPPERCASEN_AME: com.mysql.cj.jdbc.Driver
+      LIFERAY_JDBC_PERIOD_DEFAULT_PERIOD_URL: "jdbc:mysql://db/lportal?characterEncoding=UTF-8&dontTrackOpenResources=true&holdResultsOpenOverStatementClose=true&serverTimezone=GMT&useFastDateParsing=false&useUnicode=true"
+      LIFERAY_JDBC_PERIOD_DEFAULT_PERIOD_USERNAME: liferay
+      LIFERAY_JDBC_PERIOD_DEFAULT_PERIOD_PASSWORD: liferaySuperSecretPassword
+
 # Uncomment next 2 lines for demo #2 (restrict locales to German and English)
 #    environment:
 #      LIFERAY_LOCALES_PERIOD_ENABLED: de_DE,en_US,hu_HU
 # Uncomment next 2 lines for demo #3 (inject scripts, files, plugins on startup)
-#    volumes:
-#      - ./conf/liferay:/etc/liferay/mount
+    volumes:
+      - ./conf/liferay:/etc/liferay/mount
+#      - "D:\\repos\\liferay-docker-demo\\conf\\liferay:/etc/liferay/mount"
+  db:
+# NOTE: connector conf/liferay/files/tomcat/lib/ext/mysql-connector-java-8.0.16.jar
+    image: mysql:8.0.16
+    command: --default-authentication-plugin=mysql_native_password --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    restart: always
+    environment:
+# Use root/exampleRootPassword as user/password credentials
+      MYSQL_ROOT_PASSWORD: exampleRootPassword
+      MYSQL_USER: liferay
+      MYSQL_PASSWORD: liferaySuperSecretPassword
+      MYSQL_DATABASE: lportal

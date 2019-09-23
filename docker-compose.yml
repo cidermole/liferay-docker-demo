@@ -40,10 +40,10 @@ services:
   gitlab:
     image: 'gitlab/gitlab-ce:latest'
     restart: always
-    hostname: 'gitlab.example.com'
+    hostname: 'dev-at.qualysoft.hu'
     environment:
       GITLAB_OMNIBUS_CONFIG: |
-        external_url 'https://gitlab.example.com'
+              external_url 'http://dev-at.qualysoft.hu:8181'
         # Add any other gitlab.rb configuration here, each on its own line
     ports:
       - '8181:80'

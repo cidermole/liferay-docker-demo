@@ -47,8 +47,8 @@ services:
         # Add any other gitlab.rb configuration here, each on its own line
     ports:
       - '8181:80'
-      - '8443:443'
-      - '8022:22'
+      - '9443:443'
+      - '9022:22'
     volumes:
       - './data/gitlab/config:/etc/gitlab'
       - './data/gitlab/logs:/var/log/gitlab'

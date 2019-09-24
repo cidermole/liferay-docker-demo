@@ -14,6 +14,18 @@ Clone the project from [Bitbucket](https://bitbucket.org/liferaysamples/liferay-
 
 ## Prebuilt demo scenarios
 
+### Quick Summary
+
+1. `docker-compose up -d`
+2. Set a root password for Gitlab at http://127.0.0.1:8181/
+3. Setup Jenkins: copy initial admin password from `docker exec -it liferaydocker_jenkins_1 cat /var/jenkins_home/secrets/initialAdminPassword` and enter it in http://127.0.0.1:8282/
+4. Services are available at:
+
+    Gitlab http://127.0.0.1:8181/
+    Jenkins http://127.0.0.1:8282/
+    Liferay http://127.0.0.1:8383/
+
+
 ### Demo #1 - Running / Stopping / Reinitializing the Liferay container
 
 Hint: the sudo command is only needed on Linux systems, for Mac and Windows just use the command without the phrase `sudo`.

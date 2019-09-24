@@ -1,6 +1,6 @@
 # Liferay Docker Demo
 
-This runs a Liferay 7.1 CE instance for demo purposes.
+This runs a Liferay 7.2 CE instance for demo purposes.
 
 ## Prerequisites
 

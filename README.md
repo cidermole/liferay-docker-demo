@@ -1,6 +1,6 @@
 # Liferay Docker Demo
 
-This runs a Liferay 7.1 CE instance - it is used for demo purposes only and has no real data persistence.
+This runs a Liferay 7.1 CE instance for demo purposes.
 
 ## Prerequisites
 
@@ -85,6 +85,7 @@ Now you have seen that the official Liferay container is on the one hand very be
 ## Authors
 
 * **Manuel Manhart** - *Initial work*
+* **David Madl** - extended with MySQL, Jenkins, and GitLab
 
 ## Built With
 
@@ -92,6 +93,9 @@ Now you have seen that the official Liferay container is on the one hand very be
 * [Docker-Compose](https://docs.docker.com/compose/) - Composing multiple containers into one service
 * [VS Code](https://rometools.github.io/rome/) - Used to edit all the files
 * [Liferay Portal](https://www.liferay.com/) - The service used in the container
+* [Jenkins](https://hub.docker.com/r/jenkins/jenkins/)
+* [MySQL](https://hub.docker.com/_/mysql)
+* [GitLab](https://hub.docker.com/r/gitlab/gitlab-ce)
 
 ## see also
 
